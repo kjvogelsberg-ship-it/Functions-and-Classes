@@ -1,0 +1,224 @@
+CODE:
+
+import random
+class Game:
+    def generateComputerChoice(self):
+        choices = ["rock", "paper", "scissors"]
+        return random.choice(choices)
+
+    def determineWinner(self, userChoice, computerChoice):
+        if userChoice == computerChoice:
+            return "it's a Tie"
+        elif userChoice == "rock" and computerChoice == "scissors":
+            return "You win!"
+        elif userChoice == "paper" and computerChoice == "rock":
+            return "You win!"
+        elif userChoice == "scissors" and computerChoice == "paper":
+            return "You win!"
+        else:
+            return "Computer wins!"
+
+    def playRound(self, userChoice):
+        if userChoice not in ["rock", "paper", "scissors"]:
+            print("Error: invalid choice.")
+            return
+        computerChoice = self.generateComputerChoice()
+        print("Computer choice:", computerChoice)
+        print(self.determineWinner(userChoice, computerChoice))
+
+class area:
+    def area_circle(self, radius):
+        return 3.14 * radius * radius
+
+    def area_rectangle(self, length, width):
+        return length * width
+
+    def area_triangle(self, base, height):
+        return base * height / 2
+
+    def area_trapezoid(self, base1, base2, height):
+        return (base1 + base2) * height / 2
+
+    def area_parallelogram(self, base, height):
+        return base * height
+
+
+class Calculator:
+    def add(self, num1, num2):
+        return num1 + num2
+
+    def subtract(self, num1, num2):
+        return num1 - num2
+
+    def multiply(self, num1, num2):
+        return num1 * num2
+
+    def divide(self, num1, num2):
+        if num2 == 0:
+            return "Error: Cannot divide by zero."
+        else:
+            return num1 / num2
+
+if __name__ == "__main__":
+
+    again = "yes"
+
+    while again == "yes":
+        print("Choose a shape:")
+        print("circle")
+        print("rectangle")
+        print("triangle")
+        print("trapezoid")
+        print("parallelogram")
+
+        choice = input("Enter your choice: ").lower().strip()
+
+        try:
+            calculator = area()
+
+            if choice == "circle":
+                radius = float(input("Enter radius: "))
+
+                if radius < 0:
+                    print("Error: Radius cannot be negative.")
+                else:
+                    answer = calculator.area_circle(radius)
+                    print("Circle area:", answer)
+
+            elif choice == "rectangle":
+                length = float(input("Enter length: "))
+                width = float(input("Enter width: "))
+
+                if length < 0 or width < 0:
+                    print("Error: Measurements cannot be negative.")
+                else:
+                    answer = calculator.area_rectangle(length, width)
+                    print("Rectangle area:", answer)
+
+            elif choice == "triangle":
+                base = float(input("Enter base: "))
+                height = float(input("Enter height: "))
+
+                if base < 0 or height < 0:
+                    print("Error: Measurements cannot be negative.")
+                else:
+                    answer = calculator.area_triangle(base, height)
+                    print("Triangle area:", answer)
+
+            elif choice == "trapezoid":
+                base1 = float(input("Enter first base: "))
+                base2 = float(input("Enter second base: "))
+                height = float(input("Enter height: "))
+
+                if base1 < 0 or base2 < 0 or height < 0:
+                    print("Error: Measurements cannot be negative.")
+                else:
+                    answer = calculator.area_trapezoid(base1, base2, height)
+                    print("Trapezoid area:", answer)
+
+            elif choice == "parallelogram":
+                base = float(input("Enter base: "))
+                height = float(input("Enter height: "))
+
+                if base < 0 or height < 0:
+                    print("Error: Measurements cannot be negative.")
+                else:
+                    answer = calculator.area_parallelogram(base, height)
+                    print("Parallelogram area:", answer)
+
+            else:
+                print("Error: Invalid shape choice.")
+
+        except ValueError:
+            print("Error: Please enter numbers only.")
+
+        while True:
+            again = input("Do you want to continue? (yes/no): ").lower().strip()
+
+            if again == "yes":
+                break
+            elif again == "no":
+                print("Area Calculator finished!")
+                break
+            else:
+                print("Error: Please enter yes or no.")
+
+    print("Welcome to the Math Calculator!")
+
+    again = "yes"
+
+    while again == "yes":
+        print("\nChoose an operation:")
+        print("add")
+        print("subtract")
+        print("multiply")
+        print("divide")
+
+        choice = input("Enter your choice: ").lower().strip()
+
+        try:
+            calculator = Calculator()
+
+            if choice == "add":
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+                answer = calculator.add(num1, num2)
+                print("Answer:", round(answer,2))
+
+            elif choice == "subtract":
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+                answer = calculator.subtract(num1, num2)
+                print("Answer:", round(answer,2))
+
+            elif choice == "multiply":
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+                answer = calculator.multiply(num1, num2)
+                print("Answer:", round(answer,2))
+
+            elif choice == "divide":
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+                answer = calculator.divide(num1, num2)
+                print("Answer:",answer)
+
+            else:
+                print("Error: Invalid choice. Enter add, subtract, multiply, or divide.")
+
+        except ValueError:
+            print("Error: Please enter numbers only.")
+
+        while True:
+            again = input("Do you want to continue? (yes/no): ")
+
+            if again == "yes":
+                break
+            elif again == "no":
+                print("Goodbye!")
+                break
+            else:
+                print("Error: Please enter yes or no.")
+
+        print("Welcome to Rock Paper Scissors!")
+
+        game = Game()
+        again = "yes"
+
+        while again == "yes":
+            choice = input("Enter rock, paper, or scissors: ").lower().strip()
+
+            game.playRound(choice)
+
+            while True:
+                again = input("Do you want to play again? (yes/no): ").lower().strip()
+
+                if again == "yes":
+                    break
+
+                elif again == "no":
+                    print("Goodbye!")
+                    break
+
+                else:
+                    print("Error: Please enter yes or no.")
