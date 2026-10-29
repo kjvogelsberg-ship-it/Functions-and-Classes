@@ -1,0 +1,51 @@
+AI Usage – Functions and Classes Assignment
+
+AI Tool Used
+
+ChatGPT
+
+Prompt 1: Area Calculator
+
+Prompt: Help me create a Python area calculator using classes and functions.
+
+Response Summary: ChatGPT helped me create functions to calculate the area of different shapes, including circles, rectangles, triangles, trapezoids, and parallelograms.
+
+Prompt 2: Math Calculator
+
+Prompt: Help me make a calculator using a class with addition, subtraction, multiplication, and division.
+
+Response Summary: ChatGPT explained how to create a Calculator class with separate functions for each math operation.
+
+Prompt 3: Rock Paper Scissors
+
+Prompt: Help me create a Rock Paper Scissors game using classes and functions.
+
+Response Summary: ChatGPT helped me create a Game class that generates random computer choices and determines the winner.
+
+Prompt 4: Error Handling
+
+Prompt: How do I add error checking and a yes/no option to repeat my programs?
+
+Response Summary: ChatGPT showed me how to use while loops, if statements, and try/except to handle invalid inputs and allow users to play again.
+
+Prompt 5: Understanding Classes
+
+Prompt: What does game = Game() mean?
+
+Response Summary: ChatGPT explained that this creates an object from the Game class so I can call its functions.
+
+Prompt 6: Understanding Functions
+
+Prompt: Explain what my playRound() function does.
+
+Response Summary: ChatGPT explained how the function checks the player's choice, generates the computer's choice, and determines the winner.
+
+Prompt 7: Fixing Code
+
+Prompt: Help me fix errors with my Python code and indentation.
+
+Response Summary: ChatGPT helped me understand where to place my classes, functions, and while loops so the programs would run correctly.
+
+Overall AI Usage Summary
+
+I used ChatGPT to help me understand how Python classes and functions work. It helped me plan my programs, fix coding errors, add error handling, and understand parts of the code I was confused about. I used the explanations to improve my understanding of Python.
